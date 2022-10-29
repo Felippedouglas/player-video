@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video player</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/4ef9aa9cce.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="div-video" id="div-video" onmousemove="divHoverOn()" onmouseout="divHoverOff()">
+
+        <span class="span-play-pause" id="span-play-pause">
+            <i class="fas fa-play i-span-play-pause" id="i-span-play-pause"></i>
+        </span>
+
+        <video class="video" id="video"
+            src="https://br.vid.web.acsta.net/uk/medias/nmedia/55/21/11/17/14/19566053_hd_013.mp4"></video>
+        <div class="controls-video" id="controls-video">
+            <div class="div-all-controls">
+                <div class="div-timeline-duration">
+                    <input type="range" name="input-duration" id="input-duracao-video" onclick="minutosVideo()">
+                </div>
+                <div class="div-play-pause-minutes-audio">
+                    <div>
+                        <section class="section-play-pause">
+                            <i class="fas fa-play img-play-pause" id="img-play-pause" onclick="playPausarVideo()"></i>
+                        </section>
+                        <section class="section-minutes" id="section-minutes">
+                            <span id="span-minutes"></span>
+                        </section>
+                        <section class="section-audio">
+                            <section class="section-mute-audio" onclick="audioMuteVideo()">
+                                <i class="fas fa-volume-up img-audio" id="img-audio" style="cursor: pointer;"></i>
+                            </section>
+                            <section class="section-input-volume" onclick="volumeVideo()">
+                                <input type="range" name="input-volume" id="input-volume-audio" min="0" max="100">
+                            </section>
+                        </section>
+                    </div>
+
+                    <div>
+                        <button onclick="fullscreenOn()" class="bt-full-screen" id="bt-full-screen"><i class="fas fa-expand"></i></button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="play-pause-background" onclick="playPausarVideo()"></div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
